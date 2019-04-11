@@ -2,6 +2,7 @@ package com.ssi;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 
@@ -12,7 +13,8 @@ public class Laptop {
 	private String brand;
 	private int price;
 	
-	
+	@OneToOne(mappedBy="laptop")
+	private Emp emp;
 	
 	public Laptop() {
 		super();
@@ -49,6 +51,12 @@ public class Laptop {
 	public String toString() {
 		return "Laptop [lcode=" + lcode + ", brand=" + brand + ", price="
 				+ price + "]";
+	}
+	public Emp getEmp() {
+		return emp;
+	}
+	public void setEmp(Emp emp) {
+		this.emp = emp;
 	}
 	
 	

@@ -12,9 +12,11 @@ public class SearchEmp {
 		System.out.println(emp.getEcode());
 		System.out.println(emp.getEname());
 		System.out.println(emp.getSal());
-		System.out.println(emp.getLaptop().getLcode());
-		System.out.println(emp.getLaptop().getBrand());
-		System.out.println(emp.getLaptop().getPrice());
+		
+		System.out.println(emp.getLaptop());
+		
+		
+		
 		session.close();
 	
 	}

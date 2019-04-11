@@ -1,6 +1,7 @@
 package com.ssi;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -12,7 +13,7 @@ public class Emp {
 	private String ename;
 	private int sal;
 
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY)
 	private Laptop laptop;
 	
 	public Emp() {
