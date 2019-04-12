@@ -15,7 +15,7 @@ public class Emp {
 	private String ename;
 	private int sal;
 
-	@OneToMany
+	@OneToMany(mappedBy="emp")
 	private List<Laptop> laptops=new ArrayList<Laptop>();
 	
 	public Emp() {

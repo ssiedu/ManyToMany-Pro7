@@ -2,6 +2,7 @@ package com.ssi;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -12,6 +13,9 @@ public class Laptop {
 	private String lcode;
 	private String brand;
 	private int price;
+	
+	@ManyToOne
+	private Emp emp;
 	
 	
 	public Laptop() {
@@ -44,6 +48,13 @@ public class Laptop {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	
+	public Emp getEmp() {
+		return emp;
+	}
+	public void setEmp(Emp emp) {
+		this.emp = emp;
 	}
 	@Override
 	public String toString() {

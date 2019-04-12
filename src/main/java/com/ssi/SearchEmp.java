@@ -9,7 +9,7 @@ public class SearchEmp {
 	public static void main(String[] args) {
 
 		Session session=Util.getSF().openSession();
-		Emp emp=session.get(Emp.class, "E112");
+		Emp emp=session.get(Emp.class, "E111");
 		
 		System.out.println(emp.getEcode());
 		System.out.println(emp.getEname());
