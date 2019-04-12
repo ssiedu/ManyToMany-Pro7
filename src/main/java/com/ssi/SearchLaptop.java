@@ -12,10 +12,6 @@ public class SearchLaptop {
 		System.out.println(laptop.getLcode());
 		System.out.println(laptop.getBrand());
 		System.out.println(laptop.getPrice());
-		/*System.out.println("Emp Details : ");
-		System.out.println(laptop.getEmp().getEcode());
-		System.out.println(laptop.getEmp().getEname());
-		System.out.println(laptop.getEmp().getSal());*/
 		session.close();
 	}
 

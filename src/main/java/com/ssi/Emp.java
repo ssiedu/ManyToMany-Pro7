@@ -1,9 +1,11 @@
 package com.ssi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -13,8 +15,8 @@ public class Emp {
 	private String ename;
 	private int sal;
 
-	@OneToOne(fetch=FetchType.LAZY)
-	private Laptop laptop;
+	@OneToMany
+	private List<Laptop> laptops=new ArrayList<Laptop>();
 	
 	public Emp() {
 		super();
@@ -24,14 +26,15 @@ public class Emp {
 		super();
 		this.ecode = ecode;
 	}
-
-	public Emp(String ecode, String ename, int sal, Laptop laptop) {
+	
+	public Emp(String ecode, String ename, int sal, List<Laptop> laptops) {
 		super();
 		this.ecode = ecode;
 		this.ename = ename;
 		this.sal = sal;
-		this.laptop = laptop;
+		this.laptops = laptops;
 	}
+
 	public String getEcode() {
 		return ecode;
 	}
@@ -50,18 +53,14 @@ public class Emp {
 	public void setSal(int sal) {
 		this.sal = sal;
 	}
-	public Laptop getLaptop() {
-		return laptop;
-	}
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
+
+	public List<Laptop> getLaptops() {
+		return laptops;
 	}
 
-	@Override
-	public String toString() {
-		return "Emp [ecode=" + ecode + ", ename=" + ename + ", sal=" + sal
-				+ ", laptop=" + laptop + "]";
+	public void setLaptops(List<Laptop> laptops) {
+		this.laptops = laptops;
 	}
-	
+
 	
 }
