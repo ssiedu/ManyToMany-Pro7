@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
@@ -17,6 +18,11 @@ public class Emp {
 
 	@OneToMany(mappedBy="emp")
 	private List<Laptop> laptops=new ArrayList<Laptop>();
+	
+	@ManyToMany
+	private List<Project> projects=new ArrayList<Project>();
+	
+	
 	
 	public Emp() {
 		super();
@@ -60,6 +66,14 @@ public class Emp {
 
 	public void setLaptops(List<Laptop> laptops) {
 		this.laptops = laptops;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 
 	

@@ -13,5 +13,6 @@
         <property name="show_sql">true</property>
         <mapping class="com.ssi.Laptop"/>
         <mapping class="com.ssi.Emp"/>
+        <mapping class="com.ssi.Project"/>
     </session-factory>
 </hibernate-configuration>
